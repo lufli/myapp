@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   match '/profile', to: 'users#profile', via: :get
   match '/update', to: 'users#profile_update', via: :post
   match '/mywork', to: 'products#mywork', via: :get
+  match '/search', to: 'products#search', via: :post
+  match '/search', to: 'application#index', via: :get
   
 
   # Example resource route with options:

@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     if user and user.password==user_params[:password]
       session[:session_token] = user.session_token
       flash[:success] = "You are login as #{user.email}!"
-      redirect_to new_user_path
+      redirect_to root_path
       return
     else
       flash[:warning] = "The username and password you entered did not match our records."
@@ -34,6 +34,6 @@ class SessionsController < ApplicationController
   
   def destroy
       reset_session
-      redirect_to new_user_path
+      redirect_to root_path
   end
 end
