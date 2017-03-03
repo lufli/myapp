@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :users
   resources :products
+  resources :orders
   
   match '/login_create', to: 'sessions#create', via: :post
   match '/logout', to: 'sessions#destroy', via: :delete
@@ -22,6 +23,9 @@ Rails.application.routes.draw do
   match '/mywork', to: 'products#mywork', via: :get
   match '/search', to: 'products#search', via: :post
   match '/search', to: 'application#index', via: :get
+  match '/make_order', to: 'products#detail', via: :get
+  match '/myorder', to: 'orders#show', via: :get
+  match '/order_details', to: 'orders#detail', via: :get
   
 
   # Example resource route with options:

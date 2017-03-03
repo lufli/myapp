@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for Order.new do |f| %>
+        <div class="form-group">
+        <%= f.label @product.name %>
+        </div>
+        <div class="form-group">
+        <%= image_tag @product.image.url %>
+        </div>
+        <div class="form-group">
+        Price: $ <%= @product.price %>
+        </div>
+        <div class="form-group">
+        <%= f.label :quantity %>
+        <%= f.number_field :quantity, :step => "1", :class => 'form-control', :placeholder => "1" %>
+        </div>
+        <div class="form-group">
+        Pick up address: <%= @user.address1 %>, <%= @user.address2 %>, <%= @user.city %>, <%= @user.state %> <%= @user.zipcode %>
+        </div>
+        <div class="form-group">
+        <%= f.label 'Special Requests:' %>
+        <%= f.text_area :details, :class => 'form-control' %>
+        </div>
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <%= f.hidden_field :user_id, value: @id %>
+        <div class="form-group text-center">
+        <%= f.submit "Order Now", class: "btn btn-primary" %>
+        </div>
+      <% end %>

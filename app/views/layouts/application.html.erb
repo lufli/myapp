@@ -16,7 +16,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-
+    <%= favicon_link_tag 'myicon.ico' %>
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default">
       <div class="container">
@@ -25,7 +25,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand" href="/">MyChef</a>
+          <a class="btn" href="/"><%= image_tag "brand.png", :size => "35x35" %></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,7 +42,11 @@
               <% end %>
             </li>
             <li class="page-scroll">
-              <a href="#about">About</a>
+              <% if @current_user %>
+                <%= link_to "My Order", myorder_path, :method => :get %>
+              <% else %>
+                <a href="#portfolio">About</a>
+              <% end %>
             </li>
             <li class="page-scroll">
               <% if @current_user %>

@@ -1,9 +1,6 @@
 <section class="section-a">
   <div class="container">
-    <h1> <i class="fa fa-shopping-cart"></i> My Works </h1>
-    <div class"row">
-      <%= link_to "Add", new_product_path, :method => :get, :class => "btn btn-success col-md-1 pull-right" %>
-    </div>
+    <h1> <i class="fa fa-shopping-cart"></i> My Orders </h1>
 
     <table class="table table-hover" width="500" border="0" cellpadding="5">
       <col width="100">
@@ -12,20 +9,22 @@
         <tr>
           <th>Picture</th>
           <th>Name</th>
-          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Date</th>
           <th>Learn more</th>
-          <th>Details</th>
         </tr>
       </thead>
       <tbody>
-        <% if @products %>
-          <% @products.each do |product| %>
+        <% if @orders %>
+          <% @orders.each do |order, product| %>
           <tr>
             <td><%= image_tag product.image.url, :size => "100x60" %></td>
             <td><%= product.name %></td>
-            <td>$ <%= product.price %></td>
-            <td><%= product.description %></td>
-            <td> <%= link_to "Details", make_order_path(:id => product.id), :class => "btn btn-warning" %> </td>
+            <td><%= order.quantity %></td>
+            <td> $ <%= order.total %> </td>
+            <td> <%= order.created_at %></td>
+            <td> <%= link_to "Details", order_details_path(:id => product.id), :class => "btn btn-warning" %> </td>
           </tr>
           <% end %>
         <% end %>

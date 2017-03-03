@@ -1,0 +1,32 @@
+<section class="section-a">
+  <div class="container">
+    <h1> <i class="fa fa-shopping-cart"></i> My Works </h1>
+
+    <table class="table table-hover" width="500" border="0" cellpadding="5">
+      <col width="100">
+      <col width="80">
+      <thead>
+        <tr>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Distance</th>
+          <th>Learn more</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @products %>
+          <% @products.each do |product, distance| %>
+          <tr>
+            <td><%= image_tag product.image.url, :size => "100x60" %></td>
+            <td><%= product.name %></td>
+            <td>$ <%= product.price %></td>
+            <td> <%= distance %> mi</td>
+            <td> <%= link_to "Order", make_order_path(:id => product.id), :class => "btn btn-warning" %> </td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    render 'new'
+    if @current_user then
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
   
   def profile

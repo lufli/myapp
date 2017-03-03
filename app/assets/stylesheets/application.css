@@ -14,3 +14,57 @@
  *= require_self
  */
 /* forms */
+
+/* body */
+body {
+    font-family: Arial Black;
+    background-color: #ffffff;
+}
+/* section */
+.section-a {
+    font-family: Arial Black;
+    background-color: #b28af6;
+    color: white;
+    height: 400px;
+    padding: 0;
+}
+.section-b {
+    font-family: Arial Black;
+    background-color: #ffffff;
+    color: black;
+    height: 400px;
+    padding: 0;
+}
+
+/* navbar */
+.navbar-default {
+    background-color: #ffffff;
+    border-color: #E7E7E7;
+}
+.nav.navbar-nav.navbar-right li a {
+    color: #b28af6;
+    font-family: Arial Black;
+    font-size: 1.0em;
+}
+/* table */
+table {
+    text-align: center;
+    color: #a9a9a9;
+    background-color: #ffffff;
+    
+}
+.vividworknav:hover {
+  opacity: 0.3;
+}
+tr:hover {
+    color: black;
+}
+th {
+    text-align: center;
+    color: #a9a9a9;
+}
+/* button */
+.btn-order {
+    display: block;
+    margin: auto;
+}

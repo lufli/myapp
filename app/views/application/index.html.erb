@@ -1,13 +1,14 @@
+<section class="section-a">
 <div class="container">
 	<div class="row">
 	  <span class="col-md-1"></span>
     <div class="col-md-10 text-center">
-      <h2>Find Chef and Yummy Dishes</h2>
+      <h2 style="color:white">Find Chef and Yummy Dishes</h2>
       <div id="custom-search-input">
         <div class="input-group col-md-12">
           <%= form_for(:product, url: search_path) do |f| %>
-            <%= f.text_field :address, :class =>"input-lg col-md-10", :placeholder => "Street Address, City, State" %>
-              <%= f.select(:distance, ['1 mile', '2.5 miles', '5 miles', '10 miles', 'Any'], {}, { :class => 'input-lg' }) %>
+            <%= f.text_field :address, :class =>"input-lg col-md-9", :placeholder => "Street Address, City, State", :style => 'color: #a9a9a9' %>
+              <%= f.select(:distance, ['1 mile', '2.5 miles', '5 miles', '10 miles', 'Any'], {}, { :class => 'input-lg', :style => 'color: #a9a9a9'}) %>
               <%= button_to '', :class =>"btn btn-info btn-lg"  do %>
                 <span class="glyphicon glyphicon-search"></span>
               <% end %>
@@ -17,3 +18,9 @@
     </div>
 	</div>
 </div>
+</section>
+<section class="section-b"></section>
+<section class="section-a"></section>
+<section class="section-b"></section>
+<section class="section-a"></section>
+<section class="section-b"></section>
