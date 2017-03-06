@@ -8,6 +8,32 @@ class ProductsController < ApplicationController
     render 'new'
   end
   
+    def update
+    @product = Product.find_by_id(params[:id])
+    @user = User.find_by_session_token(session[:session_token])
+    if @user.id != @product.user_id then
+      flash[:success] = "You are not allow to edit this work."
+      redirect_to mywork_path
+    elsif @product.update(product_params)
+      flash[:success] = "Successfully updated!"
+    else
+      flash[:notice] = "Failed to update. Please try again."
+    end
+    redirect_to mywork_path
+  end
+  
+  def index
+    @product = Product.find_by_id(params[:id])
+    @user = User.find_by_session_token(session[:session_token])
+    @id = params[:id]
+    if @user.id != @product.user_id then
+      flash[:success] = "You are not allow to edit this work."
+      redirect_to mywork_path
+    else
+      render 'edit'
+    end
+  end
+  
   def create
     product_params[:user_id] = User.find_by_session_token(session[:session_token]).id.to_i
     hash = product_params
