@@ -8,16 +8,16 @@ class ProductsController < ApplicationController
     render 'new'
   end
   
-    def update
+  def update
     @product = Product.find_by_id(params[:id])
     @user = User.find_by_session_token(session[:session_token])
     if @user.id != @product.user_id then
-      flash[:success] = "You are not allow to edit this work."
+      flash.now[:success] = "You are not allow to edit this work."
       redirect_to mywork_path
     elsif @product.update(product_params)
-      flash[:success] = "Successfully updated!"
+      flash.now[:success] = "Successfully updated!"
     else
-      flash[:notice] = "Failed to update. Please try again."
+      flash.now[:notice] = "Failed to update. Please try again."
     end
     redirect_to mywork_path
   end
@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
     @user = User.find_by_session_token(session[:session_token])
     @id = params[:id]
     if @user.id != @product.user_id then
-      flash[:success] = "You are not allow to edit this work."
+      flash.now[:success] = "You are not allow to edit this work."
       redirect_to mywork_path
     else
       render 'edit'
@@ -70,7 +70,7 @@ class ProductsController < ApplicationController
             # distances.appdend(distance)
           end
         end
-      flash[:success] = @products.size.to_s + " food have been found in your area."
+      flash.now[:success] = @products.size.to_s + " food have been found in your area."
     end
     render 'show'
   end

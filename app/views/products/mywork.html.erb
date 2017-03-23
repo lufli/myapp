@@ -25,7 +25,7 @@
             <td><%= product.name %></td>
             <td>$ <%= product.price %></td>
             <td><%= product.description %></td>
-            <td> <%= link_to "Details", products_path(:id => product.id), :class => "btn btn-warning" %> </td>
+            <td> <%= link_to "Edit", products_path(:id => product.id), :class => "btn btn-warning" %> </td>
           </tr>
           <% end %>
         <% end %>

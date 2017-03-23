@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   match '/make_order', to: 'products#detail', via: :get
   match '/myorder', to: 'orders#show', via: :get
   match '/order_details', to: 'orders#detail', via: :get
+  match '/about_me', to: 'application#aboutme', via: :get
+  match '/download', to: 'application#download', via: :get
   
 
   # Example resource route with options:

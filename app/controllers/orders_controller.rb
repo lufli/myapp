@@ -8,9 +8,9 @@ class OrdersController < ApplicationController
     hash = order_params
     hash[:total] = Product.find(order_params[:product_id]).price*order_params[:quantity].to_f
     if Order.create!(hash) then
-      flash[:notice] = "Thank you for order in MyChef!"
+      flash.now[:notice] = "Thank you for order in MyChef!"
     else
-      flash[:notice] = "Something goes wrong."
+      flash.now[:notice] = "Something goes wrong."
     end
     redirect_to myorder_path
   end
@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
       @orders = Hash[@orders.to_a.reverse]
     end
     if !@orders then
-      flash[:notice] = "You have no order, make one."
+      flash.now[:notice] = "You have no order, make one."
     end
     render 'show'
   end

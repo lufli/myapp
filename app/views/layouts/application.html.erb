@@ -45,7 +45,7 @@
               <% if @current_user %>
                 <%= link_to "My Order", myorder_path, :method => :get %>
               <% else %>
-                <a href="#portfolio">About</a>
+                <%= link_to "About Me", about_me_path, :method => :get %>
               <% end %>
             </li>
             <li class="page-scroll">

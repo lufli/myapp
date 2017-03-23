@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <style>
+    body {
+      font-family: "Arial Black", Gadget, sans-serif;
+      font-size: 15px;
+      line-height: 1.42857143;
+      background-color: #ffffff;
+    }
+
+    .clear {clear: both;}
+    .mainDetails {
+	    padding: 25px 35px;
+	    border-bottom: 2px solid #cf8a05;
+	    background: #ededed;
+    }
+    
+    section {
+	    border-top: 1px solid #cf8a05;
+	    padding: 25px 35px;
+    }
+
+    section:first-child {
+	    border-top: 0px;
+    }
+
+    section:last-child {
+	    padding: 20px 0 10px;
+    }
+
+    .sectionTitle {
+	    float: left;
+	    width: 25%;
+    }
+    
+    .sectionTitle h1 {
+      font-style: italic;
+    	font-size: 1.5em;
+	    color: #cf8a05;
+    }
+
+    .sectionContent h2 {
+	     font-size: 1.0em;
+	     margin-bottom: -2px;
+    }
+
+    .sectionContent {
+	    float: right;
+	    width: 72.5%;
+    }
+    
+    .subDetails {
+	    font-size: 0.8em;
+	    font-style: italic;
+	    margin-bottom: 3px;
+    }
+
+    .keySkills {
+	    list-style-type: none;
+	    -moz-column-count:3;
+	    -webkit-column-count:3;
+	    column-count:3;
+	    margin-bottom: 20px;
+	    font-size: 1em;
+	    color: #444;
+    }
+
+    .keySkills ul li {
+	    margin-bottom: 3px;
+    }
+    
+    #headshot {
+	    width: 12.5%;
+	    float: left;
+	    margin-right: 30px;
+    }
+
+    #headshot img {
+	    width: 100%;
+	    height: auto;
+	    -webkit-border-radius: 50px;
+	    border-radius: 50px;
+    }
+    
+    #contactDetails {
+	    float: right;
+    }
+
+    #contactDetails ul {
+	    list-style-type: none;
+	    font-size: 0.9em;
+	    margin-top: 2px;
+    }
+
+    #contactDetails ul li {
+	    margin-bottom: 3px;
+	    color: #444;
+    }
+
+    #contactDetails ul li a, a[href^=tel] {
+	    color: #444; 
+	    text-decoration: none;
+	    -webkit-transition: all .3s ease-in;
+	    -moz-transition: all .3s ease-in;
+	    -o-transition: all .3s ease-in;
+	    -ms-transition: all .3s ease-in;
+	    transition: all .3s ease-in;
+    }
+
+    #contactDetails ul li a:hover { 
+	    color: #cf8a05;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-default top-bar fixed">
+      <div class="container-fluid">
+        <div class="navbar-header col-xs-1">
+          <a href="https://www.cs.uiowa.edu/"><%= image_tag "uibrand.gif", :class => "img-responsive", :size => "50x50" %></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">About Me</a></li>
+          <li><%= link_to "Resume" , download_path(:file_name => "resume.pdf") %></li>
+          <li><a href="#">Project</a></li> 
+          <li><a href="#">Contact</a></li> 
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container-fluid" id="mainDetails">
+
+      <div class="text-center" id="headshot">
+        <%= image_tag "headshot.png", :style => "border-radius:50%; width: 7em; border: 5px solid white;", :alt => "Lufan Li" %>
+      </div>
+      <div id="contactDetails" style="float: left;">
+        <ul>
+          <li><h4>Lufan Li</h4></li>
+          <li>Master Candidate in Computer Science</li>
+          <li>University of Iowa</li></li>
+        </ul>
+        
+      </div>
+      <div id="contactDetails" class="">
+			  <ul>
+			    <li><h4></h4></li>
+				  <li>Email: <a href="lufan-li@uiowa.edu" target="_blank">lufan-li@uiowa.edu</a></li>
+				  <li>Website: <a href="http://45.63.69.219/">http://45.63.69.219/</a></li>
+				  <li>Mobile: (319)-237-5481</li>
+			  </ul>
+		  </div>
+    </div>
+    
+		<section class="container-fluid" style="border-top: 0px;">
+			<article>
+				<div class="sectionTitle">
+					<h1>Personal Profile</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<p style="font-family: 'Lato', helvetica, arial, sans-serif;">My name is Lufan Li, I'm a master student in the Department of Computer Science at the University of Iowa. I am a programming enthusiast and have a strong theoretical background in Computer Science. I enjoy solving problems by using my programming skills and never get tired of it. I am currently fascinated in Cloud Computing Technology and looking for some interesting projects to practice. If you have any interesting project idea or any feedback about the projects I have done, do not hesitate to contact me. It is always a pleasure to discuss and share ideas with you!</p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+	  
+	  <section class="container-fluid">
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2>University of Iowa<small class="subDetails" style="float: right;">August 2015 - May 2017</small></h2>
+					<p style="font-family: 'Lato', helvetica, arial, sans-serif;">Master of Science in Computer Science</p>
+				</article>
+				
+				<article>
+					<h2>Inner Mongolian Normal University <small class="subDetails" style="float: right;">August 2008 - July 2012</small></h2>
+					<p style="font-family: 'Lato', helvetica, arial, sans-serif;">Bachelor of Science in Computing and Information Science</p>
+				</article>
+				<div class="clear"></div>
+			</div>
+		</section>
+		
+		<section class="container-fluid">
+			<article>
+				<div class="sectionTitle">
+					<h1>Languages</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<h3>
+					  <span class="label label-danger">Java</span>
+					  <span class="label label-info">Python</span>
+					  <span class="label label-danger">Ruby</span>
+					  <span class="label label-primary">C</span>
+					  <span class="label label-warning">SQL</span>
+					  <span class="label label-success">HTML</span>
+          </h3>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		<section class="container-fluid">
+			<div class="sectionTitle">
+				<h1>Tools and Skills</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li>Hadoop</li>
+					<li>Map/Reduce</li>
+					<li>Hive</li>
+					<li>Spark</li>
+					<li>Rails</li>
+					<li>Selenium</li>
+					<li>Cucumber</li>
+					<li>MySQL</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		<section class="container-fluid">
+			<article>
+			  <div class="sectionTitle">
+					<h1>Selected Projects</h1>
+				</div>
+				<div class="sectionContent">
+				  <h2>Web Application for People Who Love Cooking<small class="subDetails" style="float: right;">Spring 2017</small></h2>
+				  <ul style="font-family: 'Lato', helvetica, arial, sans-serif;">
+				    <br>
+				    <li>Built a web application for cooking lovers to share and sell their dedicated dishes</li>
+				    <li>Implemented the whole website using Ruby on Rails and various gems</li>
+				    <li>Deployed and maintained the website on my own server <a href="http://45.63.69.219/">http://45.63.69.219</a></li>
+				  </ul>
+				  <hr>
+				  <h2>Price Discrimination Detecting on Travel Agent Websites<small class="subDetails" style="float: right;">Fall 2016</small></h2>
+				  <ul style="font-family: 'Lato', helvetica, arial, sans-serif;">
+				    <br>
+				    <li>Designed a method to detect online price discrimination by using saved cookies in user browser profiles</li>
+				    <li>Implemented an application to maintain and train user browser profiles in order to convince websites our price queries are from real user</li>
+				    <li>Wrote crawler script querying flight tickets and hotel stays price by using different user browser profiles</li>
+				    <li>Analyzed the dataset collected by crawler from five popular travel agent websites during the whole month</li>
+				    <li>Get report from <%= link_to "here" , download_path(:file_name => "project1.pdf") %></li>
+				  </ul>
+				  <hr>
+				  </p>
+				</div>
+			</article>
+		</section>
+		
+
+<div class="">
+  
+</div>

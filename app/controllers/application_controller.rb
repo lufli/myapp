@@ -13,4 +13,13 @@ class ApplicationController < ActionController::Base
   def index
     render 'index'
   end
+  
+  def aboutme
+    render 'aboutme', :layout => false
+  end
+  
+  def download
+    send_file("/home/ubuntu/workspace/myapp/public/" + params[:file_name], :filename => params[:file_name], :disposition => 'inline', :type => "application/pdf")
+  end
+  
 end

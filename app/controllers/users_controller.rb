@@ -35,13 +35,13 @@ class UsersController < ApplicationController
   def create
     
     if user_params[:password] != user_params[:confirmation] then
-      flash[:notice] = "Your password do not match. Please try again."
+      flash.now[:notice] = "Your password do not match. Please try again."
     else   
       hash = user_params
       if User.create_user!({:email => hash[:email], :password => hash[:password]}) then
-        flash[:success] = "You have successfully signed up. Please sign in."
+        flash.now[:success] = "You have successfully signed up. Please sign in."
       else
-        flash[:notice] = "This user name has already been taken. Please try another one."
+        flash.now[:notice] = "This user name has already been taken. Please try another one."
       end
     end
     
